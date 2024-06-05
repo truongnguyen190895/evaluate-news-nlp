@@ -19,11 +19,12 @@ const API_KEY = process.env.API_KEY;
 const apiUrl = "https://api.meaningcloud.com/sentiment-2.1";
 
 app.post("/api", (req, res) => {
-  const text = req.body.text;
+  const url = req.body.url;
   const formData = new FormData();
   formData.append("key", process.env.API_KEY);
   formData.append("lang", "auto");
-  formData.append("txt", text);
+  formData.append("url", url);
+  formData.append("of", "json");
   fetch(apiUrl, {
     method: "POST",
     body: formData,
