@@ -31,7 +31,7 @@ Make sure you have the following software installed:
 
 ### Running the Project
 
-1. Start serve:
+1. Start server:
 
    ```sh
    yarn start
