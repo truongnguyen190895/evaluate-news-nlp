@@ -1,17 +1,9 @@
 import { checkForUrl } from "./urlChecker";
 
-// If working on Udacity workspace, update this with the Server API URL e.g. `https://wfkdhyvtzx.prod.udacity-student-workspaces.com/api`
-// const serverURL = 'https://wfkdhyvtzx.prod.udacity-student-workspaces.com/api'
-
-const form = document.getElementById("urlForm");
-const subjectivity = document.getElementById("subjectivity");
-const text = document.getElementById("text");
-// const validation = document.getElementBy("validation");
-form.addEventListener("submit", handleSubmit);
-
-function handleSubmit(event) {
+export function handleSubmit(event) {
   event.preventDefault();
-  console.log("Submitted");
+  const subjectivity = document.getElementById("subjectivity");
+  const text = document.getElementById("text");
   // Get the URL from the input field
   const formText = document.getElementById("name").value;
   if (checkForUrl(formText)) {
@@ -33,5 +25,5 @@ function handleSubmit(event) {
   }
 }
 
-// Export the handleSubmit function
-export { handleSubmit };
+const form = document.getElementById("urlForm");
+form.addEventListener("submit", handleSubmit);
