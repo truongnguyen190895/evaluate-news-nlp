@@ -2,6 +2,8 @@ var path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
+const FormData = require("form-data");
+const fetch = require("node-fetch");
 dotenv.config();
 
 const app = express();
@@ -12,19 +14,19 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "../../dist")));
 
-console.log(__dirname);
-
 // Variables for url and api key
 const API_KEY = process.env.API_KEY;
 const apiUrl = "https://api.meaningcloud.com/sentiment-2.1";
+console.log("API_KEY ", API_KEY);
 
+const formData = new FormData();
 app.post("/api", (req, res) => {
   const url = req.body.url;
-  const formData = new FormData();
-  formData.append("key", process.env.API_KEY);
+  formData.append("key", API_KEY);
   formData.append("lang", "auto");
   formData.append("url", url);
   formData.append("of", "json");
+  // console.log("formData ", formData);
   fetch(apiUrl, {
     method: "POST",
     body: formData,
