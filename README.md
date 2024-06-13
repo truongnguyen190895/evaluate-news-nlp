@@ -6,7 +6,7 @@
 
 Make sure you have the following software installed:
 
-- Node.js (https://nodejs.org/)
+- Node.js (https://nodejs.org/) version 14
 - npm (Node Package Manager, comes with Node.js)
 
 ### Installation

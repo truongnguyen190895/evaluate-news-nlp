@@ -22,6 +22,8 @@ export function handleSubmit(event) {
         text.innerHTML = data.sentence_list[0].segment_list[0].text;
       })
       .catch((error) => console.error("Something went wrong ", error));
+  } else {
+    window.alert("The link is invalid");
   }
 }
 

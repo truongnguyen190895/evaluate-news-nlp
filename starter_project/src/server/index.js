@@ -26,7 +26,7 @@ app.post("/api", (req, res) => {
   formData.append("lang", "auto");
   formData.append("url", url);
   formData.append("of", "json");
-  // console.log("formData ", formData);
+  console.log("API is being sent from server");
   fetch(apiUrl, {
     method: "POST",
     body: formData,
